@@ -11,7 +11,9 @@ module Loadable
         attrs.each do |key, value|
           metadata = self.reflect_on_association(key)
           if metadata
-            puts "would set #{key} = #{value} when we support it"
+            klass = metadata.class_name.constantize
+            rel = klass.find_or_create_by(:designation => value)
+            obj.send(metadata.setter, rel)
           else
             obj[key] = value
           end
