@@ -1,0 +1,6 @@
+[
+  {
+    "designation": "Falcon 9",
+    "stages": ["falcon-9-1st-stage", "falcon-9-2nd-stage"]
+  }
+]

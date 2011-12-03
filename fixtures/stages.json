@@ -1,0 +1,18 @@
+[
+  {
+    "designation": "Falcon 9 1st Stage",
+    "engine_count": 9,
+    "engine": "merlin-1c",
+    "burn_time_s": 170,
+    "fuel": "RP-1",
+    "oxidizer": "LOX"
+  },
+  {
+    "designation": "Falcon 9 2nd Stage",
+    "engine_count": 1,
+    "engine": "merlin-vac",
+    "burn_time_s": 345,
+    "fuel": "RP-1",
+    "oxidizer": "LOX"
+  }
+]
