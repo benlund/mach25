@@ -7,5 +7,5 @@
 
 <p> versions: </p>
 <% @versions.each do |version| -%>
-  <p><%= version.version %></p>
+  <p><%= link_to version.version, engine_path(@entity, :version => version.version) %></p>
 <% end -%>
