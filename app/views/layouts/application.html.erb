@@ -1,24 +1,70 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Mach25</title>
+  <title>Mach25 - Explore Space.</title>
+  <meta content="text/html; charset=UTF-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+  <link href="/stylesheets/docs.css" rel="stylesheet">
+  <link href="/stylesheets/css/prettify.css" rel="stylesheet">
+  <!--<script type='text/javascript' src='/media/js/jquery-1.4.2.min.js'></script>-->
 </head>
 <body>
-  <% if user_signed_in? -%>
-  <div>
-    <%= current_user.name %>
-    <%= link_to 'Log out', destroy_user_session_path %>
-  </div>
-  <% else -%>
-  <div>
-    <%= link_to 'Log in', new_user_session_path %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-  </div>
-  <% end -%>
+
+    <!-- Topbar
+    ================================================== -->
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand" href="#">Mach25</a>
+
+          <ul class="nav">
+            <li class="active"><a href="#overview">Home</a></li>
+            <li><%= link_to 'Engines', engines_path -%></li>
+            <li><a href="#stages">Stages</a></li>
+            <li><a href="#rockets">Rockets</a></li>
+            <li><a href="#companies">Companies</a></li>
+            
+            <li style="margin-left: 50px;"><a href="#about">About</a></li>
+	    <li><a href="#press">Press</a></li>
+            <li><a href="#api">API</a></li>
+            <li><a href="#getinvolved">Get Involved</a></li>
+	    <!--
+	    <% if user_signed_in? -%>
+	    <li>
+	      <%= current_user.name %>
+	      <%= link_to 'Log out', destroy_user_session_path %>
+	    </li>
+	    <% else -%>
+	    <li>
+	      <%= link_to 'Log in', new_user_session_path %>
+	      <%= link_to 'Sign up', new_user_registration_path %>
+	    </li>
+	    <% end -%>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+
 <%= yield %>
+
+    <footer class="footer">
+
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>
+          Mach25 was built with Rails, MongoDB, Twitter Bootstrap and Coffeescript, by <a href="https://twitter.com/#!/benlund">Ben Lund</a> and <a href="http://michaelhallsmoore.com">Mike Halls-Moore</a>.<br />
+
+          Grab the <a href="https://github.com/benlund/mach25">code on Github</a>. Check out the data <a href="">API</a>.
+        </p>
+      </div>
+    </footer>
 
 </body>
 </html>

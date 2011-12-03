@@ -4,7 +4,7 @@ class Engine
   include Mongoid::Timestamps
 
   include Sortable
-  sortable_by :name, :sl_thrust_n, :vac_thrust_n 
+  sortable_by :name => 'Name', :sl_thrust_n => 'Thrust (Sea-level)', :vac_thrust_n  => 'Thrust (Vacuum)'
 
   key :name
 

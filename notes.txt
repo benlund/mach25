@@ -46,9 +46,12 @@ Sat 3rd Dec
   - ok, so adding a version history action
   - and added a version= param support to show action
 
- * Adding sort, order param support to index action
+ * Added sort, order param support to index action
   - basic support in controller
-  - adding demo links in UI
+  - added demo links in UI
+
+ * Resolving deisgn commits @@
+
 
 @@ designations
 @@ linking to other entities in descriptions

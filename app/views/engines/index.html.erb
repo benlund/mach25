@@ -1,14 +1,10 @@
-<h2>Engines</h2>
+<div class="container">
+  <section id="type-list">
+    <div class="row">
+      <div class="span12">
+        <div class="page-header"><h1>Engines&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
 
-<p>
-<% Engine.sort_fields.each do |field| -%>
-  <div class=<% if params[:sort] == field %>sort_selected<% end %>>
-    <%= field %>
-    <%= link_to 'asc', engines_url(:sort => field, :order => 'asc') %>
-    <%= link_to 'desc', engines_url(:sort => field, :order => 'desc') %>
-  </div>
-<% end -%>
-</p>
+
 
 <p>
 <% @entities.each do |entity| -%>
@@ -18,3 +14,53 @@
   <br>
 <% end -%>
 </p>
+	    <% @entities.each do |entity| -%>
+            <div class="component-type">
+              <div class="component-image">
+                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="./media/images/engine-ssme.jpg"></a></li></ul>
+              </div>
+              <div class="component-details">
+                <h4><%= h(entity.title || entity.name) %></h4>
+                <p>The RS-25, otherwise known as the Space Shuttle Main Engine (SSME), is a reusable liquid-fuel rocket engine built by Pratt &amp; Whitney Rocketdyne for the Space Shuttle, running on liquid hydrogen and oxygen.</p>
+                <p>Thrust (Vac.): 2.279 MN | Thrust (SL): 1.86 MN</p>
+                <p>Developed by: Pratt &amp; Whitney Rocketdyne</p>
+              </div>
+            </div>
+	    <% end -%>
+            
+            <div class="pagination">
+            <ul>
+            <li class="prev disabled"><a href="#">&larr; Previous</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li class="next"><a href="#">Next &rarr;</a></li>
+            </ul>
+          </div>
+            
+          </div>
+          <div class="span4">
+            <div class="well">
+              <h3>Stats</h3>
+              <p><strong>53</strong> rocket engines</p>
+              <p>Avg vac thrust: <strong>1.86 MN</strong></p>
+              <p>Min vac thrust: <strong>0.45 MN</strong></p>
+              <p>Max vac thrust: <strong>3.82 MN</strong></p>
+              
+              
+              <h3>Sort By</h3>
+              <ul class="sort-list">
+		<% Engine.sort_fields.keys.sort.each do |field| -%>
+	        <li class=<%= params[:sort] == field ? 'sort-' + ('asc' == params[:order] ? 'asc' : 'desc') : '' %>>
+		  <%= link_to Engine.sort_fields[field], engines_url(:sort => field, :order => (params[:order] == 'desc' ? 'asc' : 'desc')) %>
+		</li>
+		<% end -%>
+              </ul>
+            </div>
+          </div>
+    </div>
+  </section>
+
+</div>
