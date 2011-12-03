@@ -25,11 +25,11 @@
           <a class="brand" href="#">Mach25</a>
 
           <ul class="nav">
-            <li class="active"><a href="#overview">Home</a></li>
-            <li><%= link_to 'Engines', engines_path -%></li>
-            <li><a href="#stages">Stages</a></li>
-            <li><a href="#rockets">Rockets</a></li>
-            <li><a href="#companies">Companies</a></li>
+            <li class="<%= 'active' if 'home' == params[:controller] %>"><a href="/">Home</a></li>
+            <li class="<%= 'active' if 'engines' == params[:controller] %>"><%= link_to 'Engines', engines_path -%></li>
+            <li class="<%= 'active' if 'stages' == params[:controller] %>"><%= link_to 'Stages', stages_path -%></li>
+            <li class="<%= 'active' if 'rockets' == params[:controller] %>"><%= link_to 'Rockets', rockets_path -%></li>
+            <li class="<%= 'active' if 'organizations' == params[:controller] %>"><%= link_to 'Organizations', organizations_path -%></li>
             
             <li style="margin-left: 50px;"><a href="#about">About</a></li>
 	    <li><a href="#press">Press</a></li>

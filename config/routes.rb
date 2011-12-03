@@ -3,12 +3,17 @@ Mach25::Application.routes.draw do
 
   devise_for :users
 
-  resources :engines do
-    member do
-      get :versions
-      post :revert
+  [:engines, :stages, :rockets, :organizations].each do |entity|
+
+    resources entity do
+      member do
+        get :versions
+        post :revert
+      end
     end
+
   end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

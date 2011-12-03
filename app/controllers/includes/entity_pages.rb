@@ -1,6 +1,15 @@
 module EntityPages
 
+  module ClassMethods
+
+    def entity_type(et)
+      @entity_type = et
+    end
+
+  end
+
   def self.included(controller)
+    controller.extend(ClassMethods)
     controller.respond_to :json, :html
   end
 
@@ -12,35 +21,46 @@ module EntityPages
                            :desc
                          end
                   fields = [params[:sort], :name]
-                  Engine.send(meth, fields)
+                  entity_class.send(meth, fields)
                 else
-                  Engine.all
+                  entity_class.all
                 end
-    respond_with @entities
+    respond @entities
   end
 
   def show
-    @entity = Engine.find(params[:id])
+    @entity = entity_class.find(params[:id])
     if params[:version]
       @entity = @entity.versions.where(:version => params[:version]).first
     end
-    respond_with @entity
+    respond @entity
   end
 
   def versions
-    @entity = Engine.find(params[:id])
+    @entity = entity_class.find(params[:id])
     @versions = @entity.versions.reverse
-    respond_with @versions
+    respond @versions
   end
 
   ## todo - support json
   ## todo - implement revert_to !!!!
   def revert
-    if e = Engine.find(params[:id]).revert_to(params[:version])
+    if e = entity_class.find(params[:id]).revert_to(params[:version])
       redirect_to engine_url(e)
     end
   end
 
   protected
+
+  def respond(obj)
+    respond_with(obj) do |format|
+      format.html { render "entities/#{params[:action]}" }
+    end
+  end
+
+  def entity_class
+    self.class.instance_variable_get('@entity_type').camelize.constantize
+  end
+
 
 end

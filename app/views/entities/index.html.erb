@@ -2,7 +2,7 @@
   <section id="type-list">
     <div class="row">
       <div class="span12">
-        <div class="page-header"><h1>Engines&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
+        <div class="page-header"><h1><%= entity_title %>&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
 	    <% @entities.each do |entity| -%>
             <div class="component-type">
               <div class="component-image">
@@ -11,8 +11,7 @@
               <div class="component-details">
                 <h4><a href=<%= engine_path(entity) %>><%= h(entity.name) %></a></h4>
                 <p><%= h(entity.description) %></p>
-                <p>Thrust (Vac.): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) + 'kN' : '-' %> | Thrust (SL): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) + 'kN' : '-' %></p>
-                <p>Developed by: <%= entity.organization ? entity.organization.name : '?' %></p>
+		<%= render :partial => "#{entity_type.pluralize}/index_metadata", :locals => {:entity => entity} %>
               </div>
             </div>
 	    <% end -%>
@@ -33,17 +32,13 @@
           <div class="span4">
             <div class="well">
               <h3>Stats</h3>
-              <p><strong><%= Engine.count %></strong> rocket engines</p>
-              <p>Avg vac thrust: <strong>1.86 MN</strong></p>
-              <p>Min vac thrust: <strong>0.45 MN</strong></p>
-              <p>Max vac thrust: <strong>3.82 MN</strong></p>
-              
-              
+              <p><strong><%= entity_class.count %></strong> <%= entity_name.pluralize %></p>
+              <%= render :partial => "#{entity_type.pluralize}/index_stats" %>
               <h3>Sort By</h3>
               <ul class="sort-list">
-		<% Engine.sort_fields.keys.sort.each do |field| -%>
+		<% entity_class.sort_fields.keys.sort.each do |field| -%>
 	        <li class=<%= params[:sort] == field ? 'sort-' + ('asc' == params[:order] ? 'asc' : 'desc') : '' %>>
-		  <%= link_to Engine.sort_fields[field], engines_url(:sort => field, :order => (params[:order] == 'desc' ? 'asc' : 'desc')) %>
+		  <%= link_to entity_class.sort_fields[field], engines_url(:sort => field, :order => (params[:order] == 'desc' ? 'asc' : 'desc')) %>
 		</li>
 		<% end -%>
               </ul>
