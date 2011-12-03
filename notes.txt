@@ -44,7 +44,13 @@ Sat 3rd Dec
  * Added versioning
   - mongoid has it build in! wow
   - ok, so adding a version history action
+  - and added a version= param support to show action
 
+ * Adding sort, order param support to index action
+  - basic support in controller
+  - adding demo links in UI
 
 @@ designations
 @@ linking to other entities in descriptions
+@@ get versions to preserve time when they were created
+@@ implement revert_to

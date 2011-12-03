@@ -3,6 +3,9 @@ class Engine
   include Mongoid::Versioning
   include Mongoid::Timestamps
 
+  include Sortable
+  sortable_by :name, :sl_thrust_n, :vac_thrust_n 
+
   key :name
 
   field :name

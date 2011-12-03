@@ -1,4 +1,8 @@
 <h2>Engine: <%= h(@entity.name) %></h2>
+<% if params[:version] -%>
+  <h3> Showing version <%= @entity.version %></h3>
+<% end -%>
 
-
-<p> <%= link_to 'version history', versions_engine_path(@entity) %> </p>
+<% if @entity.id -%>
+  <p> <%= link_to 'version history', versions_engine_path(@entity) %> </p>
+<% end -%>

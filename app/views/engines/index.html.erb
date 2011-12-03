@@ -1,5 +1,20 @@
 <h2>Engines</h2>
 
-<% @entities.each do |entity| -%>
-  <%= link_to entity.name, engine_path(entity) %>
+<p>
+<% Engine.sort_fields.each do |field| -%>
+  <div class=<% if params[:sort] == field %>sort_selected<% end %>>
+    <%= field %>
+    <%= link_to 'asc', engines_url(:sort => field, :order => 'asc') %>
+    <%= link_to 'desc', engines_url(:sort => field, :order => 'desc') %>
+  </div>
 <% end -%>
+</p>
+
+<p>
+<% @entities.each do |entity| -%>
+  <%= link_to h(entity.name), engine_path(entity) %>
+  SL Thrust (kN): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) : '' %>
+  Vac. Thrust (kN): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) : '' %>
+  <br>
+<% end -%>
+</p>
