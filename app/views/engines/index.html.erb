@@ -3,27 +3,16 @@
     <div class="row">
       <div class="span12">
         <div class="page-header"><h1>Engines&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
-
-
-
-<p>
-<% @entities.each do |entity| -%>
-  <%= link_to h(entity.name), engine_path(entity) %>
-  SL Thrust (kN): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) : '' %>
-  Vac. Thrust (kN): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) : '' %>
-  <br>
-<% end -%>
-</p>
 	    <% @entities.each do |entity| -%>
             <div class="component-type">
               <div class="component-image">
-                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="./media/images/engine-ssme.jpg"></a></li></ul>
+                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="./media/engine-ssme.jpg"></a></li></ul>
               </div>
               <div class="component-details">
-                <h4><%= h(entity.title || entity.name) %></h4>
-                <p>The RS-25, otherwise known as the Space Shuttle Main Engine (SSME), is a reusable liquid-fuel rocket engine built by Pratt &amp; Whitney Rocketdyne for the Space Shuttle, running on liquid hydrogen and oxygen.</p>
-                <p>Thrust (Vac.): 2.279 MN | Thrust (SL): 1.86 MN</p>
-                <p>Developed by: Pratt &amp; Whitney Rocketdyne</p>
+                <h4><a href=<%= engine_path(entity) %>><%= h(entity.title || entity.name) %></a></h4>
+                <p><%= h(entity.description) %></p>
+                <p>Thrust (Vac.): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) + 'kN' : '-' %> | Thrust (SL): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) + 'kN' : '-' %></p>
+                <p>Developed by: <%= entity.organization ? entity.organization.name : '?' %></p>
               </div>
             </div>
 	    <% end -%>
@@ -44,7 +33,7 @@
           <div class="span4">
             <div class="well">
               <h3>Stats</h3>
-              <p><strong>53</strong> rocket engines</p>
+              <p><strong><%= Engine.count %></strong> rocket engines</p>
               <p>Avg vac thrust: <strong>1.86 MN</strong></p>
               <p>Min vac thrust: <strong>0.45 MN</strong></p>
               <p>Max vac thrust: <strong>3.82 MN</strong></p>

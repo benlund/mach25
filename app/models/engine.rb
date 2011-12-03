@@ -9,6 +9,7 @@ class Engine
   key :name
 
   field :name
+  field :title
   field :description
 
   field :sl_thrust_n, :type => Float
@@ -16,5 +17,7 @@ class Engine
 
   belongs_to :fuel
   belongs_to :oxidizer
+
+  belongs_to :organization
 
 end
