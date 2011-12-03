@@ -7,17 +7,21 @@
 	"vac_thrust_n": 2279000,
 	"fuel": "Liquid Hydrogen",
 	"oxidizer": "Liquid Oxygen"
-	}, {
+	}, 
+
+	{
 	"name": "J-2 Saturn V Engine",
-	"image": "engine-j2saturnv.jpg"
+	"image": "engine-j2saturnv.jpg",
 	"description": "Rocketdyne's J-2 rocket engine was a major component of the Saturn V used in the Apollo program to send men to the Moon.",
 	"sl_thrust_n": 486200,
 	"vac_thrust_n": 1033100,
 	"fuel": "Liquid Hydrogen",
 	"oxidizer": "Liquid Oxygen"
-	}, {
+	}, 
+
+	{
 	"name": "RD-170 Rocket Engine-170",
-	"image": "engine-rd170.jpg"
+	"image": "engine-rd170.jpg",
 	"description": "The RD-170 is the world's most powerful liquid-fuel rocket engine, designed and produced in the USSR by NPO Energomash for use with the Energia launch vehicle.",
 	"sl_thrust_n": 7550000,
 	"vac_thrust_n": 7887000,
