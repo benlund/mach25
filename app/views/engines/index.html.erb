@@ -6,7 +6,7 @@
 	    <% @entities.each do |entity| -%>
             <div class="component-type">
               <div class="component-image">
-                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="./media/engine-ssme.jpg"></a></li></ul>
+                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="/images/<%= h(entity.image) %>"></a></li></ul>
               </div>
               <div class="component-details">
                 <h4><a href=<%= engine_path(entity) %>><%= h(entity.title || entity.name) %></a></h4>
@@ -37,7 +37,6 @@
               <p>Avg vac thrust: <strong>1.86 MN</strong></p>
               <p>Min vac thrust: <strong>0.45 MN</strong></p>
               <p>Max vac thrust: <strong>3.82 MN</strong></p>
-              
               
               <h3>Sort By</h3>
               <ul class="sort-list">
