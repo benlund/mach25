@@ -1,9 +1,0 @@
-[
-	{
-	"name": "RS-25 Space Shuttle Main Engine (SSME)",
-	"description": "The RS-25, otherwise known as the Space Shuttle Main Engine (SSME), is a reusable liquid-fuel rocket engine built by Pratt & Whitney Rocketdyne for the Space Shuttle, running on liquid hydrogen and oxygen.",
-	"sl_thrust_n": 1860000,
-	"vac_thrust_n": 2279000,
-	"fuel": ,
-	"oxidizer": 
-	}, {
