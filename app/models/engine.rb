@@ -4,7 +4,7 @@ class Engine
   include Mongoid::Timestamps
 
   include Sortable
-  sortable_by :designation => 'Designation', :sl_thrust_n => 'Thrust (Sea-level)', :vac_thrust_n  => 'Thrust (Vacuum)'
+  sortable_by :designation => 'Designation', :max_sl_thrust_n => 'Thrust (Sea-level)', :max_vac_thrust_n  => 'Thrust (Vacuum)'
 
   include Loadable
 
@@ -17,8 +17,10 @@ class Engine
   field :description
   field :image
 
-  field :sl_thrust_n, :type => Float
-  field :vac_thrust_n, :type => Float
+  field :max_sl_thrust_n, :type => Float
+  field :min_sl_thrust_n, :type => Float
+  field :max_vac_thrust_n, :type => Float
+  field :min_vac_thrust_n, :type => Float
 
   belongs_to :fuel
   belongs_to :oxidizer

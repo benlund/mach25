@@ -1,2 +1,2 @@
-                <p>Thrust (Vac.): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) + 'kN' : '-' %> | Thrust (SL): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) + 'kN' : '-' %></p>
+                <p>Thrust (Vac.): <%= entity.max_vac_thrust_n ? h(entity.max_vac_thrust_n / 1000) + 'kN' : '-' %> | Thrust (SL): <%= entity.max_sl_thrust_n ? h(entity.max_sl_thrust_n / 1000) + 'kN' : '-' %></p>
                 <p>Developed by: <%= entity.organization ? entity.organization.name : '?' %></p>
