@@ -4,13 +4,13 @@ class Engine
   include Mongoid::Timestamps
 
   include Sortable
-  sortable_by :name => 'Name', :sl_thrust_n => 'Thrust (Sea-level)', :vac_thrust_n  => 'Thrust (Vacuum)'
+  sortable_by :designation => 'Designation', :sl_thrust_n => 'Thrust (Sea-level)', :vac_thrust_n  => 'Thrust (Vacuum)'
 
   include Loadable
 
-  key :name
+  key :designation
 
-  field :name
+  field :designation
   field :title
   field :description
   field :image
@@ -22,5 +22,9 @@ class Engine
   belongs_to :oxidizer
 
   belongs_to :organization
+
+  def name
+    self.title || self.designation
+  end
 
 end

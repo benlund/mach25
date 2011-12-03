@@ -1,6 +1,7 @@
 [
 	{
-	"name": "RS-25 Space Shuttle Main Engine (SSME)",
+	"designation": "RS-25",
+	"title": "RS-25 Space Shuttle Main Engine (SSME)",	
 	"image": "engine-rs25ssme.jpg",
 	"description": "The RS-25, otherwise known as the Space Shuttle Main Engine (SSME), is a reusable liquid-fuel rocket engine built by Pratt & Whitney Rocketdyne for the Space Shuttle, running on liquid hydrogen and oxygen.",
 	"sl_thrust_n": 1860000,
@@ -10,7 +11,8 @@
 	}, 
 
 	{
-	"name": "J-2 Saturn V Engine",
+	"designation": "J-2",
+	"title": "J-2 Saturn V Engine",
 	"image": "engine-j2saturnv.jpg",
 	"description": "Rocketdyne's J-2 rocket engine was a major component of the Saturn V used in the Apollo program to send men to the Moon.",
 	"sl_thrust_n": 486200,
@@ -20,7 +22,8 @@
 	}, 
 
 	{
-	"name": "RD-170 Rocket Engine-170",
+	"designation": "RD-170",
+	"title": "RD-170 Rocket Engine-170",
 	"image": "engine-rd170.jpg",
 	"description": "The RD-170 is the world's most powerful liquid-fuel rocket engine, designed and produced in the USSR by NPO Energomash for use with the Energia launch vehicle.",
 	"sl_thrust_n": 7550000,
