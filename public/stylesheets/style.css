@@ -1,0 +1,39 @@
+.component-type {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.component-type .component-image {
+    float: left;
+    width: 220px;
+    margin-right: 20px;
+}
+
+.component-type .component-details {
+    float: left;
+    width: 450px;
+}
+
+ul.sort-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ul.sort-list li {
+    display: block;
+    margin-bottom: 5px;
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+
+ul.sort-list li.sort-asc {
+    background-image: url(../images/icons/arrow_up.png);
+    font-weight: bold;
+}
+
+ul.sort-list li.sort-desc {
+    background-image: url(../images/icons/arrow_down.png);
+    font-weight: bold;
+}
