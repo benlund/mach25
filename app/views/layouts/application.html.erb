@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mach25</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if user_signed_in? -%>
+  <div>
+    <%= current_user.name %>
+    <%= link_to 'Log out', destroy_user_session_path %>
+  </div>
+  <% else -%>
+  <div>
+    <%= link_to 'Log in', new_user_session_path %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </div>
+  <% end -%>
+<%= yield %>
+
+</body>
+</html>

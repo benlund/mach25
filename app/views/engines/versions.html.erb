@@ -1,0 +1,11 @@
+<h2>Engine: <%= h(@entity.name) %></h2>
+<h3> Version History</h3>
+
+<p>
+  Current version: <%= @entity.version %>
+</p>
+
+<p> versions: </p>
+<% @versions.each do |version| -%>
+  <p><%= version.version %></p>
+<% end -%>

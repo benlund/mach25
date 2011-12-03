@@ -1,0 +1,5 @@
+<h2>Engines</h2>
+
+<% @entities.each do |entity| -%>
+  <%= link_to entity.name, engine_path(entity) %>
+<% end -%>
