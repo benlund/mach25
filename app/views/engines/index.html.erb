@@ -9,7 +9,7 @@
                 <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="/images/<%= h(entity.image) %>"></a></li></ul>
               </div>
               <div class="component-details">
-                <h4><a href=<%= engine_path(entity) %>><%= h(entity.title || entity.name) %></a></h4>
+                <h4><a href=<%= engine_path(entity) %>><%= h(entity.name) %></a></h4>
                 <p><%= h(entity.description) %></p>
                 <p>Thrust (Vac.): <%= entity.vac_thrust_n ? h(entity.vac_thrust_n / 1000) + 'kN' : '-' %> | Thrust (SL): <%= entity.sl_thrust_n ? h(entity.sl_thrust_n / 1000) + 'kN' : '-' %></p>
                 <p>Developed by: <%= entity.organization ? entity.organization.name : '?' %></p>
