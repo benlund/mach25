@@ -8,6 +8,8 @@ class Engine
 
   include Loadable
 
+  include Nameable
+
   key :designation
 
   field :designation
@@ -22,9 +24,5 @@ class Engine
   belongs_to :oxidizer
 
   belongs_to :organization
-
-  def name
-    self.title || self.designation
-  end
 
 end

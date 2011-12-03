@@ -1,4 +1,4 @@
-class Stage
+class Rocket
   include Mongoid::Document
   include Mongoid::Versioning
   include Mongoid::Timestamps
@@ -17,8 +17,7 @@ class Stage
   field :description
   field :image
 
-  belongs_to :engine
-  belongs_to :rocket
+  has_many :stages
 
   belongs_to :organization
 
