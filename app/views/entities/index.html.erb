@@ -2,15 +2,15 @@
   <section id="type-list">
     <div class="row">
       <div class="span12">
-        <div class="page-header"><h1><%= entity_title %>&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
+        <div class="page-header"><h1><%= entity_title.pluralize %>&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
 	    <% @entities.each do |entity| -%>
             <div class="component-type">
               <div class="component-image">
-                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="/images/<%= h(entity.image) %>"></a></li></ul>
+                <ul class="media-grid"><li><a href="<%= engine_path(entity) %>"><img class="thumbnail" alt="" src="/images/<%= h(entity.thumbnail) %>"></a></li></ul>
               </div>
               <div class="component-details">
                 <h4><a href=<%= engine_path(entity) %>><%= h(entity.name) %></a></h4>
-                <p><%= h(entity.description) %></p>
+                <p><%= h(entity.short_description) %></p>
 		<%= render :partial => "#{entity_type.pluralize}/index_metadata", :locals => {:entity => entity} %>
               </div>
             </div>

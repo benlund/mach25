@@ -1,0 +1,119 @@
+<h3>Engine Data</h3>
+<table class="bordered-table zebra-striped">
+	  <tr>
+	    <th>Property</th>
+	    <th>Value</th>
+	  </tr>
+	  <tr>
+	    <td>Designation</td>
+	    <td><%= h(@entity.designation) %></td>
+	  </tr>
+	  <tr>
+	    <td>Title</td>
+	    <td><%= h(@entity.title) %></td>
+	  </tr>
+	  <tr>
+	    <td>Country</td>
+	    <td><%= h(@entity.country) %></td>
+	  </tr>
+	  <tr>
+	    <td>Manufacturer</td>
+	    <td><%= h(@entity.manufacturer) %></td>
+	  </tr>
+	  <tr>
+	    <td>Designer</td>
+	    <td><%= h(@entity.designer) %></td>
+	  </tr>
+	  <tr>
+	    <td>First Produced</td>
+	    <td><%= h(@entity.first_produced) %></td>
+	  </tr>
+	  <tr>
+	    <td>First Flight</td>
+	    <td><%= h(@entity.first_flight) %></td>
+	  </tr>
+	  <tr>
+	    <td>Last Flight</td>
+	    <td><%= h(@entity.last_flight) %></td>
+	  </tr>
+	  <tr>
+	    <td>Status</td>
+	    <td><%= h(@entity.status) %></td>
+	  </tr>
+	  <tr>
+	    <td>Wikipedia URL</td>
+	    <td><%= h(@entity.wikipedia_url) %></td>
+	  </tr>
+</table>
+
+<h3>Technical Specifications</h3>
+<table class="bordered-table zebra-striped">
+          <tr>
+	    <th>Property</th>
+	    <th>Value</th>
+	  </tr>
+	  <tr>
+	    <td>Fuel</td>
+	    <td><%= h(@entity.fuel) %></td>
+	  </tr>
+	  <tr>
+	    <td>Oxidizer</td>
+	    <td><%= h(@entity.oxidizer) %></td>
+	  </tr>
+	  <tr>
+	    <td>Min. Sea Level Thrust (kN)</td>
+	    <td><%= h(@entity.min_sl_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Max. Sea Level Thrust (kN)</td>
+	    <td><%= h(@entity.max_sl_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Min. Vacuum Thrust (kN)</td>
+	    <td><%= h(@entity.min_vac_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Max. Vacuum Thrust (kN)</td>
+	    <td><%= h(@entity.max_vac_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Isp Sea Level (s)</td>
+	    <td><%= h(@entity.sl_isp_s) %></td>
+	  </tr>
+	  <tr>
+	    <td>Isp Vacuum (s)</td>
+	    <td><%= h(@entity.vac_isp_s) %></td>
+	  </tr>
+	  <tr>
+	    <td>Cycle</td>
+	    <td><%= h(@entity.cycle) %></td>
+	  </tr>
+	  <tr>
+	    <td>Min. Chamber Pressure (MPa)</td>
+	    <td><%= h(@entity.min_chamber_pressure_pa / 1000000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Max. Chamber Pressure (MPa)</td>
+	    <td><%= h(@entity.max_chamber_pressure_pa / 1000000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Length (m)</td>
+	    <td><%= h(@entity.length_m) %></td>
+	  </tr>
+	  <tr>
+	    <td>Diameter (m)</td>
+	    <td><%= h(@entity.diameter_m) %></td>
+	  </tr>
+	  <tr>
+	    <td>Dry Weight (kg)</td>
+	    <td><%= h(@entity.dry_weight_kg) %></td>
+	  </tr>
+	  <tr>
+	    <td>Nozzle Area Ratio</td>
+	    <td><%= h(@entity.nozzle_area_ratio) %></td>
+	  </tr>
+	  <tr>
+	    <td>Burn Time (s)</td>
+	    <td><%= h(@entity.burn_time_s) %></td>
+	  </tr>
+	</table>

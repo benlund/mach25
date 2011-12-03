@@ -1,0 +1,46 @@
+<table class="bordered-table zebra-striped">
+	  <tr>
+	    <th>Property</th>
+	    <th>Value</th>
+	  </tr>
+	  <tr>
+	    <td>Designation</td>
+	    <td><%= h(@entity.designation) %></td>
+	  </tr>
+	  <tr>
+	    <td>Title</td>
+	    <td><%= h(@entity.title) %></td>
+	  </tr>
+	  <tr>
+	    <td>Fuel</td>
+	    <td><%= h(@entity.fuel) %></td>
+	  </tr>
+	  <tr>
+	    <td>Oxidizer</td>
+	    <td><%= h(@entity.oxidizer) %></td>
+	  </tr>
+	  <tr>
+	    <td>Min. Sea Level Thrust (kN)</td>
+	    <td><%= h(@entity.min_sl_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Max. Sea Level Thrust (kN)</td>
+	    <td><%= h(@entity.max_sl_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Min. Vacuum Thrust (kN)</td>
+	    <td><%= h(@entity.min_vac_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Max. Vacuum Thrust (kN)</td>
+	    <td><%= h(@entity.max_vac_thrust_n / 1000.0) %></td>
+	  </tr>
+	  <tr>
+	    <td>Isp Sea Level (s)</td>
+	    <td><%= h(@entity.sl_isp_s) %></td>
+	  </tr>
+	  <tr>
+	    <td>Isp Vacuum (s)</td>
+	    <td><%= h(@entity.vac_isp_s) %></td>
+	  </tr>
+	</table>

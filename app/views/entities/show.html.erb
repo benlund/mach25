@@ -1,8 +1,30 @@
-<h2>Engine: <%= h(@entity.name) %></h2>
-<% if params[:version] -%>
-  <h3> Showing version <%= @entity.version %></h3>
-<% end -%>
+<div class="container">
+  <section id="type-list">
+    <div class="row">
+      <div class="span16">
+        <div class="page-header"><h1>Engine: <%= h(@entity.name) %>&nbsp;<small><a href="#">Metric</a> / <a href="#">Imperial</a></small></h1></div>
+	    
+        <div class="component-type">
+          <div class="component-image">
+            <ul class="media-grid"><li><a href="#"><img class="thumbnail" alt="" src="/images/<%= h(@entity.thumbnail) %>"></a></li></ul>
+          </div>
+          <div class="component-details">
+            <p><%= h(@entity.short_description) %></p>
+          </div>
+        </div> 
 
-<% if @entity.id -%>
-  <p> <%= link_to 'version history', versions_engine_path(@entity) %> </p>
-<% end -%>
+	<%= render :partial => "#{entity_type.pluralize}/specs_table" %>
+
+	<% if params[:version] -%>
+	<h3> Showing version <%= @entity.version %></h3>
+	<% end -%>
+
+	<% if @entity.id -%>
+	<p> <%= link_to 'version history', versions_engine_path(@entity) %> </p>
+	<% end -%>
+   
+      </div>
+    </div>
+  </section>
+
+</div>
