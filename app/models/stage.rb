@@ -18,7 +18,7 @@ class Stage
   field :image
 
   belongs_to :engine
-  belongs_to :rocket
+  has_and_belongs_to_many :rocket
 
   belongs_to :organization
 
